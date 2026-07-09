@@ -15,17 +15,19 @@
 <!-- SCREENSHOTS:START -->
 ## Demo Preview
 
-> **No screenshots yet.** Add `.png` or `.jpg` files to the [`screenshots/`](screenshots/) folder, then run:
->
-> ```bash
-> python scripts/sync_readme_screenshots.py
-> git add README.md screenshots/
-> git commit -m "Add demo screenshots"
-> git push
-> ```
+Lab exam & live demo screenshots from the **EduChain Nexus** credential verification platform.
 
-_See [screenshots/README.md](screenshots/README.md) for the full checklist._
+### SCREEN 1
+![SCREEN 1](screenshots/SCREEN%201.png)
 
+| | |
+|:---:|:---:|
+| **SCREEN 2**<br>![SCREEN 2](screenshots/SCREEN%202.png) | **SCREEN 3**<br>![SCREEN 3](screenshots/SCREEN%203.png) |
+| **SCREEN  4**<br>![SCREEN  4](screenshots/SCREEN%20%204.png) | **SCREEN5**<br>![SCREEN5](screenshots/SCREEN5.png) |
+| **SCREEN 6**<br>![SCREEN 6](screenshots/SCREEN%206.png) | **SCREEN 7**<br>![SCREEN 7](screenshots/SCREEN%207.png) |
+| **SCREEN 8**<br>![SCREEN 8](screenshots/SCREEN%208.png) | **SCREEN 10**<br>![SCREEN 10](screenshots/SCREEN%2010.png) |
+
+_Total: 9 screenshot(s)_
 <!-- SCREENSHOTS:END -->
 
 ---
