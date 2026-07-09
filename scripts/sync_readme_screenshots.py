@@ -66,37 +66,21 @@ _See [screenshots/README.md](screenshots/README.md) for the full checklist._
 
     lines = [
         START,
-        "## Demo Preview",
+        "## Demo Screenshots",
         "",
-        "Lab exam & live demo screenshots from the **EduChain Nexus** credential verification platform.",
-        "",
-    ]
-
-    # Hero — SCREEN 1 or first image
-    hero = images[0]
-    lines += [
-        f"### {_title(hero)}",
-        f"![{_title(hero)}]({_img_url(hero)})",
+        "Full lab exam & live demo output from the **EduChain Nexus** credential verification platform.",
         "",
     ]
 
-    # Remaining in 2-column gallery
-    others = images[1:]
-    if others:
-        lines.append("| | |")
-        lines.append("|:---:|:---:|")
-        for i in range(0, len(others), 2):
-            a = others[i]
-            cell_a = f"**{_title(a)}**<br>![{_title(a)}]({_img_url(a)})"
-            if i + 1 < len(others):
-                b = others[i + 1]
-                cell_b = f"**{_title(b)}**<br>![{_title(b)}]({_img_url(b)})"
-                lines.append(f"| {cell_a} | {cell_b} |")
-            else:
-                lines.append(f"| {cell_a} | |")
-        lines.append("")
+    for img in images:
+        title = _title(img)
+        lines += [
+            f"### {title}",
+            f"![{title}]({_img_url(img)})",
+            "",
+        ]
 
-    lines.append(f"_Total: {len(images)} screenshot(s)_")
+    lines.append(f"**Total: {len(images)} screenshots**")
     lines.append(END)
     return "\n".join(lines)
 

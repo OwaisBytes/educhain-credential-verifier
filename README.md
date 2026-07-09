@@ -13,21 +13,38 @@
 ---
 
 <!-- SCREENSHOTS:START -->
-## Demo Preview
+## Demo Screenshots
 
-Lab exam & live demo screenshots from the **EduChain Nexus** credential verification platform.
+Full lab exam & live demo output from the **EduChain Nexus** credential verification platform.
 
 ### SCREEN 1
 ![SCREEN 1](screenshots/SCREEN%201.png)
 
-| | |
-|:---:|:---:|
-| **SCREEN 2**<br>![SCREEN 2](screenshots/SCREEN%202.png) | **SCREEN 3**<br>![SCREEN 3](screenshots/SCREEN%203.png) |
-| **SCREEN  4**<br>![SCREEN  4](screenshots/SCREEN%20%204.png) | **SCREEN5**<br>![SCREEN5](screenshots/SCREEN5.png) |
-| **SCREEN 6**<br>![SCREEN 6](screenshots/SCREEN%206.png) | **SCREEN 7**<br>![SCREEN 7](screenshots/SCREEN%207.png) |
-| **SCREEN 8**<br>![SCREEN 8](screenshots/SCREEN%208.png) | **SCREEN 10**<br>![SCREEN 10](screenshots/SCREEN%2010.png) |
+### SCREEN 2
+![SCREEN 2](screenshots/SCREEN%202.png)
 
-_Total: 9 screenshot(s)_
+### SCREEN 3
+![SCREEN 3](screenshots/SCREEN%203.png)
+
+### SCREEN  4
+![SCREEN  4](screenshots/SCREEN%20%204.png)
+
+### SCREEN5
+![SCREEN5](screenshots/SCREEN5.png)
+
+### SCREEN 6
+![SCREEN 6](screenshots/SCREEN%206.png)
+
+### SCREEN 7
+![SCREEN 7](screenshots/SCREEN%207.png)
+
+### SCREEN 8
+![SCREEN 8](screenshots/SCREEN%208.png)
+
+### SCREEN 10
+![SCREEN 10](screenshots/SCREEN%2010.png)
+
+**Total: 9 screenshots**
 <!-- SCREENSHOTS:END -->
 
 ---
