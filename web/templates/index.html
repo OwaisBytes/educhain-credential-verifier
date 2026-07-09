@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduChain Nexus — Credential Verification Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>{{ inline_css | safe }}</style>
+</head>
+<body>
+  <div id="bootLoader" class="boot-loader">
+    <div class="boot-card">
+      <div class="boot-spinner"></div>
+      <h2>EduChain Nexus</h2>
+      <p>Initializing blockchain credential system…</p>
+      <small>Deploying contract · Pinata IPFS · AI engine</small>
+    </div>
+  </div>
+  <div class="shell">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-emblem">🎓</div>
+        <div>
+          <strong>EduChain Nexus</strong>
+          <small>Credential Portal</small>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" id="sidebarNav">
+        <button class="nav-item active" data-view="overview">
+          <span class="nav-icon">◉</span> Overview
+        </button>
+        <button class="nav-item" data-view="wallets">
+          <span class="nav-icon">◎</span> Wallets <span class="nav-badge">A</span>
+        </button>
+        <button class="nav-item" data-view="credentials">
+          <span class="nav-icon">▣</span> Credentials <span class="nav-badge">A</span>
+        </button>
+        <button class="nav-item" data-view="security">
+          <span class="nav-icon">⚠</span> Threat Intel <span class="nav-badge">B</span>
+        </button>
+        <button class="nav-item" data-view="ledger">
+          <span class="nav-icon">⛓</span> Audit Ledger <span class="nav-badge">C</span>
+        </button>
+        <button class="nav-item" data-view="verify">
+          <span class="nav-icon">✓</span> Verify Degree
+        </button>
+        <button class="nav-item" data-view="documents">
+          <span class="nav-icon">📄</span> IPFS Vault
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="network-pill" id="networkBadge">SEPOLIA</div>
+        <div class="live-indicator"><span class="pulse"></span> Live sync</div>
+        <button class="btn-sync" id="refreshBtn">↻ Sync Data</button>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="topbar-eyebrow">National University Consortium</p>
+          <h1 id="pageTitle">System Overview</h1>
+        </div>
+        <div class="topbar-meta">
+          <div class="meta-chip">
+            <label>Contract</label>
+            <span id="statContract" class="mono">—</span>
+          </div>
+          <div class="meta-chip">
+            <label>Last sync</label>
+            <span id="lastSync">—</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- VIEW: Overview -->
+      <section class="view active" id="view-overview">
+        <div class="pipeline">
+          <div class="pipe-step done">Login</div><div class="pipe-arrow">→</div>
+          <div class="pipe-step done">Deploy</div><div class="pipe-arrow">→</div>
+          <div class="pipe-step done">Issue</div><div class="pipe-arrow">→</div>
+          <div class="pipe-step done">IPFS</div><div class="pipe-arrow">→</div>
+          <div class="pipe-step done">AI Scan</div><div class="pipe-arrow">→</div>
+          <div class="pipe-step done">Chain</div><div class="pipe-arrow">→</div>
+          <div class="pipe-step done">Merkle</div><div class="pipe-arrow">→</div>
+          <div class="pipe-step active">Dashboard</div>
+        </div>
+
+        <div class="bento">
+          <div class="bento-card bento-hero">
+            <h3>Blockchain Registry</h3>
+            <p class="bento-big mono" id="overviewContract">—</p>
+            <a id="etherscanLink" href="#" target="_blank" class="link-out">View on Etherscan ↗</a>
+          </div>
+          <div class="bento-card">
+            <h3>Chain Integrity</h3>
+            <div class="ring-stat" id="statChain">—</div>
+          </div>
+          <div class="bento-card">
+            <h3>AI Accuracy</h3>
+            <div class="ring-stat accent" id="statAI">—</div>
+            <small id="trainingSize">— samples</small>
+          </div>
+          <div class="bento-card">
+            <h3>Credentials</h3>
+            <div class="bento-count" id="credCount">0</div>
+            <small>on-chain records</small>
+          </div>
+          <div class="bento-card">
+            <h3>Threat Alerts</h3>
+            <div class="bento-count danger" id="threatCount">0</div>
+            <small>HIGH severity</small>
+          </div>
+          <div class="bento-card bento-wide">
+            <h3>Merkle Root</h3>
+            <p class="mono merkle-display" id="statMerkle">—</p>
+            <div class="merkle-tags" id="merkleTags"></div>
+          </div>
+        </div>
+
+        <div class="quick-verify-banner">
+          <div>
+            <h2>Instant Credential Check</h2>
+            <p>Employers can verify any issued degree in seconds</p>
+          </div>
+          <button class="btn-gold" id="goVerifyBtn">Open Verifier →</button>
+        </div>
+      </section>
+
+      <!-- VIEW: Wallets -->
+      <section class="view" id="view-wallets">
+        <p class="view-desc">Part A — ECDSA wallet identities with session management</p>
+        <div class="card-grid" id="identitiesGrid"></div>
+        <div class="permissions-box" id="permissionsBox"></div>
+      </section>
+
+      <!-- VIEW: Credentials -->
+      <section class="view" id="view-credentials">
+        <p class="view-desc">Part A — Academic credentials registered on Ethereum smart contract</p>
+        <div class="cred-grid" id="credentialsGrid"></div>
+      </section>
+
+      <!-- VIEW: Security -->
+      <section class="view" id="view-security">
+        <p class="view-desc">Part B — IsolationForest ML + rule-based threat classification</p>
+        <div class="alert-feed" id="threatsFeed"></div>
+      </section>
+
+      <!-- VIEW: Ledger -->
+      <section class="view" id="view-ledger">
+        <p class="view-desc">Part C — SHA-256 chained ledger with Merkle tree integrity</p>
+        <div class="ledger-summary" id="ledgerSummary"></div>
+        <div class="timeline" id="chainTimeline"></div>
+      </section>
+
+      <!-- VIEW: Verify -->
+      <section class="view" id="view-verify">
+        <div class="verify-hero">
+          <div class="verify-visual">
+            <div class="verify-ring" id="verifyRing">
+              <span id="verifyIcon">?</span>
+            </div>
+            <p id="verifyStatusText">Awaiting verification</p>
+          </div>
+          <div class="verify-panel">
+            <h2>Degree Verification Portal</h2>
+            <p>Authenticate with your role, enter a credential ID, and cross-check blockchain + IPFS integrity.</p>
+            <div class="verify-fields">
+              <div class="field">
+                <label>Verifier Role</label>
+                <select id="loginRole">
+                  <option value="Employer">🏢 Employer / Auditor</option>
+                  <option value="Registrar">🏛 Registrar</option>
+                  <option value="Student">🎓 Student</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Credential ID</label>
+                <input type="number" id="credentialId" min="1" value="1" placeholder="Enter ID" />
+              </div>
+              <button class="btn-gold btn-lg" id="verifyBtn">Verify Now</button>
+            </div>
+            <div class="verify-history" id="verifyResults"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW: Documents -->
+      <section class="view" id="view-documents">
+        <p class="view-desc">Part B — Certificate documents pinned on Pinata IPFS with SHA-256 CIDs</p>
+        <div class="doc-grid" id="documentsList"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast-stack" id="toastContainer"></div>
+  <script>{{ inline_js | safe }}</script>
+</body>
+</html>

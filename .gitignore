@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/sepolia_contract.json
+node_modules/
+*.docx
+!docs/LAB_EXAM_REPORT.docx
+.DS_Store
+Thumbs.db
