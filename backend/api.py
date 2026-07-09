@@ -4,10 +4,11 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from flask import Flask, jsonify, render_template, request, url_for
+from flask import Flask, jsonify, render_template, request, send_from_directory
 from flask_cors import CORS
 
 from backend.part_c.dashboard import DashboardManager
+from backend.screenshots_util import SCREENSHOTS_DIR, list_screenshots
 
 WEB_DIR = Path(__file__).resolve().parent.parent / "web"
 
@@ -67,7 +68,18 @@ def _enriched_state() -> dict:
             }
             for d in ipfs.documents
         ]
+    state["screenshots"] = list_screenshots()
     return state
+
+
+@app.route("/screenshots/<path:filename>")
+def serve_screenshot(filename: str):
+    return send_from_directory(SCREENSHOTS_DIR, filename)
+
+
+@app.route("/api/screenshots", methods=["GET"])
+def get_screenshots():
+    return jsonify({"screenshots": list_screenshots(), "count": len(list_screenshots())})
 
 
 def _read_web_file(*parts: str) -> str:

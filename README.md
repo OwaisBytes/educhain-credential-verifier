@@ -12,13 +12,21 @@
 
 ---
 
+<!-- SCREENSHOTS:START -->
 ## Demo Preview
 
-> Add screenshots to the [`screenshots/`](screenshots/) folder and they will appear here.
+> **No screenshots yet.** Add `.png` or `.jpg` files to the [`screenshots/`](screenshots/) folder, then run:
+>
+> ```bash
+> python scripts/sync_readme_screenshots.py
+> git add README.md screenshots/
+> git commit -m "Add demo screenshots"
+> git push
+> ```
 
-| Overview | Verify Credential |
-|----------|-------------------|
-| `screenshots/09-dashboard-overview.png` | `screenshots/14-verify-valid.png` |
+_See [screenshots/README.md](screenshots/README.md) for the full checklist._
+
+<!-- SCREENSHOTS:END -->
 
 ---
 
